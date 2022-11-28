@@ -1,7 +1,14 @@
 # Vectorized_kmeans
 Kmeans algorithm using vectorization for fast clustering.
 
+## General informatioin
+
+Algorithm uses vectorized approach for determining the matrix of Euclidead distances between all data points and given cluster centers. \
+Let $X \in \mathbb{R}^{m\ x\ n}$ be the data points with convenction that rows are observations and columns are features. Let $C \in \mathbb{R}^{K\ x\ n}$ be the matrix of K cluster centers. Given those two we want to determine the Euclidean distances from each point to each cluster center and determine which data point belongs to what cluster center, by finding the closest ones. For this we can use below equation, where diagonal of outer product of $X$ is substituted with Hadamard product, that is much much faster.
+
 $$||X - C||\_{2}^{2} = diag(XX^{T}) + 1\_{n}diag(CC^{T})^{T} - 2XC^{T} = \sum\_{i}(X \circ X)_{ij} + 1\_{n}diag(CC^{T})^{T} - 2XC^{T}$$
+
+## Example of use
 
 Here is an example of the algorithm in photo compression. \
 (K=16, tol=0.05, time=4.03 s ± 741 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)) \
