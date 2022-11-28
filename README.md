@@ -10,6 +10,7 @@ Let $X \in \mathbb{R}^{m\ \times\ n}$ be the data points with convenction that r
 
 Row-wise sum of Hadamard products of $X$ is a column vector, but using numpy library it is broadcasted $\mathbb{R}^{m} \mapsto \mathbb{R}^{m\ \times\ K}$ for summation to be definded. \
 $1\_{n}$ is a column vector of ones with n entries.
+I used the assumption that all vectors are column vectors by default, thus to get row vector the transpose operation is needed.
 
 ## Loss function
 
