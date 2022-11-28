@@ -9,7 +9,7 @@ Let $X \in \mathbb{R}^{m\ \times\ n}$ be the data points with convenction that r
 $$||X - C||\_{2}^{2} = diag(XX^{T}) + 1\_{n}diag(CC^{T})^{T} - 2XC^{T} = \sum\_{i}(X \circ X)_{ij} + 1\_{n}diag(CC^{T})^{T} - 2XC^{T}$$
 
 Row-wise sum of Hadamard products of $X$ is a column vector, but using numpy library it is broadcasted $\mathbb{R}^{m} \mapsto \mathbb{R}^{m\ \times\ K}$ for summation to be definded. \
-1\_{n} is a column vector with n entries.
+$1\_{n}$ is a column vector with n entries.
 
 ## Example of use
 
