@@ -3,8 +3,8 @@ Kmeans algorithm using vectorization for fast clustering.
 
 ## General informatioin
 
-The algorithm uses vectorized approach for determining the matrix of Euclidead distances between all data points and given cluster centers. \
-Let $X \in \mathbb{R}^{m\ \times\ n}$ be the data points with convenction that rows are observations and columns are features. Let $C \in \mathbb{R}^{K\ \times\ n}$ be the matrix of K cluster centers. Given those two we want to determine the Euclidean distances between each point to each cluster center and determine which data point belongs to what cluster centers, by finding the closest ones. For this we can use below equation, where diagonal of outer product of $X$ is substituted with Hadamard product, which is much much faster.
+The algorithm uses vectorized approach for determining the matrix of squared Euclidead distances between all data points and given cluster centers. \
+Let $X \in \mathbb{R}^{m\ \times\ n}$ be the data points with convenction that rows are observations and columns are features. Let $C \in \mathbb{R}^{K\ \times\ n}$ be the matrix of K cluster centers. Given those two we want to determine the squared Euclidean distances between each point to each cluster center and determine which data point belongs to what cluster centers, by finding the closest ones. For this we can use below equation, where diagonal of outer product of $X$ is substituted with Hadamard product, which is much much faster.
 
 (1) $$||X - C||\_{2}^{2} = diag(XX^{T}) + 1\_{n}diag(CC^{T})^{T} - 2XC^{T} = \sum\_{i}(X \circ X)_{ij} + 1\_{n}diag(CC^{T})^{T} - 2XC^{T}$$ 
 
